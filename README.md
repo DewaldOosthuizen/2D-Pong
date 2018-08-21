@@ -6,11 +6,11 @@ should you wish to test the game. If you are on another platform you will have t
 
 Controls:
 
-  *left Player: *
+  *left Player:*
        W -> move up,
        S -> move down
       
-  *Right Player: *
+  *Right Player:*
        up arrow -> move up,
        down arrow -> move down
       
