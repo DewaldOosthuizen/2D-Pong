@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://Pong Resource/bat.png" type="Texture" id=2]
+[ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=3]
+[ext_resource path="res://Pong Resource/table.png" type="Texture" id=4]
+
+[node name="World" type="Node2D" index="0"]
+
+position = Vector2( 3.70123, 1.85062 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+playerSpeed = 250
+initialBallSpeed = 100
+ballSpeedIncreaseAmount = 1.2
+
+[node name="leftPlayer" type="Sprite" parent="." index="0"]
+
+position = Vector2( 30, 200 )
+rotation = 0.698132
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="rightPlayer" type="Sprite" parent="." index="1"]
+
+position = Vector2( 600, 200 )
+rotation = -0.698132
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="ball" type="Sprite" parent="." index="2"]
+
+position = Vector2( 320, 200 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform" ]
+
+[node name="leftScore" type="RichTextLabel" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 365.0
+margin_right = 180.0
+margin_bottom = 395.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "BBCode", "Grow Direction", "Margin", "Material", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors" ]
+
+[node name="rightScore" type="RichTextLabel" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 469.0
+margin_top = 6.0
+margin_right = 519.0
+margin_bottom = 36.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="table-tennis-court-frames" type="Sprite" parent="." index="5"]
+
+show_behind_parent = true
+position = Vector2( 319.498, 202.138 )
+rotation = 1.5708
+scale = Vector2( 1.17873, 0.930988 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+
