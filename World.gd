@@ -1,6 +1,6 @@
 extends Node2D
 
-export var playerSpeed = 250; #px
+export var playerSpeed = 400; #px
 export var initialBallSpeed = 100; #px
 export var ballSpeedIncreaseAmount = 1.2; #px
 var screenSize
@@ -9,6 +9,7 @@ var ballDirection = Vector2(-1, 0.0)
 var ballSpeed = initialBallSpeed;
 var leftScore = 0
 var rightScore = 0
+var maxBallSpeed = 600
 
 func _ready():
 	print("Game initiated.")
@@ -36,7 +37,7 @@ func _process(delta):
 		ballDirection.y =  randf() * 2 -1
 		ballDirection = ballDirection.normalized()
 		
-		if (ballSpeed < 300): 
+		if (ballSpeed < maxBallSpeed): 
 			ballSpeed *= ballSpeedIncreaseAmount
 		
 	# reset ball if it leaves the screen

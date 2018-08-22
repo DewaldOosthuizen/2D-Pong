@@ -10,27 +10,27 @@
 position = Vector2( 3.70123, 1.85062 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-playerSpeed = 250
+playerSpeed = 400
 initialBallSpeed = 100
-ballSpeedIncreaseAmount = 1.2
+ballSpeedIncreaseAmount = 1.1
 
 [node name="leftPlayer" type="Sprite" parent="." index="0"]
 
-position = Vector2( 30, 200 )
-rotation = 0.698132
+position = Vector2( 35, 200 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="rightPlayer" type="Sprite" parent="." index="1"]
 
 position = Vector2( 600, 200 )
-rotation = -0.698132
 texture = ExtResource( 2 )
+flip_h = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="ball" type="Sprite" parent="." index="2"]
 
-position = Vector2( 320, 200 )
+position = Vector2( 321.886, 195.496 )
+scale = Vector2( 0.693746, 0.652236 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform" ]
 
@@ -103,9 +103,8 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 [node name="table-tennis-court-frames" type="Sprite" parent="." index="5"]
 
 show_behind_parent = true
-position = Vector2( 319.498, 202.138 )
-rotation = 1.5708
-scale = Vector2( 1.17873, 0.930988 )
+position = Vector2( 330.406, 198.806 )
+scale = Vector2( 1.04078, 0.949503 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
