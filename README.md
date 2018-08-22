@@ -2,7 +2,7 @@
 2D Ping Pong game created with Godot 3.
 
 NOTE: I take no credit for any images used in this game. The exe file for the game is included in the repo
-should you wish to test the game. If you are on another platform you will have to install Godot 3 and export the game for you platform.
+should you wish to test the game. You will need to execute the exe from within this folder structure as it will require the game files. If you are on another platform you will have to install Godot 3 and export the game for you platform.
 
 Controls:
 
