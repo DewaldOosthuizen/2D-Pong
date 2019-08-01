@@ -1,6 +1,6 @@
 extends Node2D
 
-export var playerSpeed = 400; #px
+export var playerSpeed = 420; #px
 export var initialBallSpeed = 100; #px
 export var ballSpeedIncreaseAmount = 1.2; #px
 export var maxBallSpeed = 450 #px
@@ -17,23 +17,24 @@ var framesLabelDisplays = 0
 
 var playerOne
 var playerTwo
-var playerOneTexture
-var playerTwoTexture
 var ball
-var leftColide
-var rightColide
+var ballCollide
+
+var ballTouchedPlayer1 = false
+var ballTouchedPlayer2 = false
 
 func _ready():
 	print("Game initiated.")
 	screenSize = get_viewport_rect().size
 	playerOne = get_node("player1");
 	playerTwo = get_node("player2");
-	playerOneTexture = get_node("player1/leftPlayer");
-	playerTwoTexture = get_node("player2/rightPlayer");
 	ball = get_node("theBall");
+	ballCollide = ball.get_node("Area2D")
 	set_process(true)
 	pass
 
+#func _physics_process(delta):
+#	_process(delta)
 
 func _process(delta):
 	_handle_ball_collision(delta)
@@ -46,10 +47,6 @@ func _process(delta):
 	
 	
 func _handle_ball_collision(delta):
-	#Colliders
-	var leftColide = Rect2(playerOne.position - playerOneTexture.texture.get_size()*0.7, playerOneTexture.texture.get_size())
-	var rightColide = Rect2(playerTwo.position - playerTwoTexture.texture.get_size()*0.7, playerTwoTexture.texture.get_size())
-	
 	#ball position
 	ballPosition = ball.position
 	
@@ -58,29 +55,37 @@ func _handle_ball_collision(delta):
 	if ((ballPosition.y < 0 and ballDirection.y < 0) or (ballPosition.y > screenSize.y and ballDirection.y > 0)):
 		ballDirection.y = -ballDirection.y
 		
-	if (leftColide.has_point(ballPosition) or rightColide.has_point(ballPosition)):
-		ballDirection.x = -ballDirection.x
-		ballDirection.y =  randf() * 2 -1
-		ballDirection = ballDirection.normalized()
-		
-		if (ballSpeed < maxBallSpeed): 
-			ballSpeed *= ballSpeedIncreaseAmount
+	var area = ballCollide.get_overlapping_bodies()
+	if (area.size() != 0):
+		for body in area:
+			if (body.is_in_group("player1") and !ballTouchedPlayer1):
+				ballTouchedPlayer1 = true
+				ballTouchedPlayer2 = false
+				_change_ball_direction()
+			if (body.is_in_group("player2") and !ballTouchedPlayer2):
+				ballTouchedPlayer1 = false
+				ballTouchedPlayer2 = true
+				_change_ball_direction()
 	
 	pass
 
 
 func _calculate_win_and_reset():
-		# reset ball if it leaves the screen
+	# reset ball if it leaves the screen
 	if (ballPosition.x < 0):
 		ballPosition = screenSize * 0.5
 		ballSpeed = initialBallSpeed
 		ballDirection.x = -ballDirection.x
 		rightScore += 1
+		ballTouchedPlayer1 = false
+		ballTouchedPlayer2 = false
 	if (ballPosition.x > screenSize.x):
 		ballPosition = screenSize * 0.5
 		ballSpeed = initialBallSpeed
 		ballDirection.x = -ballDirection.x
 		leftScore += 1
+		ballTouchedPlayer1 = false
+		ballTouchedPlayer2 = false
 	pass
 
 
@@ -115,5 +120,15 @@ func _set_all_variables():
 	playerTwo.position = rightPlayerPosition
 	get_node("leftScore").set_text(str(leftScore))
 	get_node("rightScore").set_text(str(rightScore))
+	
+	pass
+	
+func _change_ball_direction():
+	ballDirection.x = -ballDirection.x
+	ballDirection.y =  randf() * 2 -1
+	ballDirection = ballDirection.normalized()
+				
+	if (ballSpeed < maxBallSpeed): 
+		ballSpeed *= ballSpeedIncreaseAmount
 	
 	pass
