@@ -36,8 +36,8 @@ func _process(delta):
 	
 func _handle_ball_collision(delta):
 	#Colliders
-	var leftColide = Rect2(get_node("leftPlayer").position - padSize*0.5, padSize)
-	var rightColide = Rect2(get_node("rightPlayer").position - padSize*0.5, padSize)
+	var leftColide = Rect2(get_node("leftPlayer").position - padSize*0.7, padSize)
+	var rightColide = Rect2(get_node("rightPlayer").position + padSize*0.7, padSize)
 	
 	#ball position
 	ballPosition = get_node("ball").position

@@ -5,108 +5,46 @@
 [ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=3]
 [ext_resource path="res://Pong Resource/table.png" type="Texture" id=4]
 
-[node name="World" type="Node2D" index="0"]
-
+[node name="World" type="Node2D"]
 position = Vector2( 3.70123, 1.85062 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-playerSpeed = 400
-initialBallSpeed = 100
-ballSpeedIncreaseAmount = 1.2
-maxBallSpeed = 450
 
-[node name="leftPlayer" type="Sprite" parent="." index="0"]
-
-position = Vector2( 35, 200 )
+[node name="leftPlayer" type="Sprite" parent="."]
+position = Vector2( 42.7164, 200.857 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="rightPlayer" type="Sprite" parent="." index="1"]
-
-position = Vector2( 600, 200 )
+[node name="rightPlayer" type="Sprite" parent="."]
+position = Vector2( 590.569, 197.428 )
 texture = ExtResource( 2 )
 flip_h = true
-_sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="ball" type="Sprite" parent="." index="2"]
-
-position = Vector2( 321.886, 195.496 )
+[node name="ball" type="Sprite" parent="."]
+position = Vector2( 320.607, 194.889 )
 scale = Vector2( 0.693746, 0.652236 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform" ]
 
-[node name="leftScore" type="RichTextLabel" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="leftScore" type="RichTextLabel" parent="."]
 margin_left = 130.0
 margin_top = 365.0
 margin_right = 180.0
 margin_bottom = 385.0
 rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Anchor", "BBCode", "Grow Direction", "Margin", "Material", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors" ]
 
-[node name="rightScore" type="RichTextLabel" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="rightScore" type="RichTextLabel" parent="."]
 margin_left = 469.0
 margin_top = 6.0
 margin_right = 519.0
 margin_bottom = 26.0
 rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="table-tennis-court-frames" type="Sprite" parent="." index="5"]
-
+[node name="table-tennis-court-frames" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 330.406, 198.806 )
-scale = Vector2( 1.04078, 0.949503 )
+position = Vector2( 330.789, 197.949 )
+scale = Vector2( 1.04387, 0.949503 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
-
-
