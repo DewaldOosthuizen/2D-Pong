@@ -1,27 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Pong Resource/bat.png" type="Texture" id=2]
-[ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=3]
-[ext_resource path="res://Pong Resource/table.png" type="Texture" id=4]
+[ext_resource path="res://Pong Resource/table.png" type="Texture" id=2]
+[ext_resource path="res://Pong Resource/bat.png" type="Texture" id=3]
+[ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.287
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 32.2991
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 8.36332
 
 [node name="World" type="Node2D"]
 position = Vector2( 3.70123, 1.85062 )
 script = ExtResource( 1 )
-
-[node name="leftPlayer" type="Sprite" parent="."]
-position = Vector2( 42.7164, 200.857 )
-texture = ExtResource( 2 )
-
-[node name="rightPlayer" type="Sprite" parent="."]
-position = Vector2( 590.569, 197.428 )
-texture = ExtResource( 2 )
-flip_h = true
-
-[node name="ball" type="Sprite" parent="."]
-position = Vector2( 320.607, 194.889 )
-scale = Vector2( 0.693746, 0.652236 )
-texture = ExtResource( 3 )
 
 [node name="leftScore" type="RichTextLabel" parent="."]
 margin_left = 130.0
@@ -47,4 +42,48 @@ custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 show_behind_parent = true
 position = Vector2( 330.789, 197.949 )
 scale = Vector2( 1.04387, 0.949503 )
+texture = ExtResource( 2 )
+
+[node name="player1" type="Node2D" parent="."]
+position = Vector2( 46.4726, 194.117 )
+
+[node name="leftPlayer" type="Sprite" parent="player1"]
+position = Vector2( -1.06935, -0.158997 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="player1"]
+position = Vector2( 11.6081, -14.1212 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1/Area2D"]
+position = Vector2( -0.157898, 3.47371 )
+shape = SubResource( 1 )
+
+[node name="player2" type="Node2D" parent="."]
+position = Vector2( 586.603, 195.534 )
+
+[node name="rightPlayer" type="Sprite" parent="player2"]
+position = Vector2( -0.922729, -0.899918 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="player2"]
+position = Vector2( -15.8742, -12.7713 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2/Area2D"]
+position = Vector2( 1.29993, 1.74997 )
+shape = SubResource( 2 )
+
+[node name="theBall" type="Node2D" parent="."]
+position = Vector2( 321.235, 196.233 )
+
+[node name="ball" type="Sprite" parent="theBall"]
+position = Vector2( 0.106903, -0.645218 )
+scale = Vector2( 0.693746, 0.652236 )
 texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="theBall"]
+position = Vector2( -0.500122, 0.465546 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="theBall/Area2D"]
+position = Vector2( 0.21106, -0.532776 )
+shape = SubResource( 3 )
