@@ -40,8 +40,8 @@ custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 
 [node name="table-tennis-court-frames" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( 330.789, 197.949 )
-scale = Vector2( 1.04387, 0.949503 )
+position = Vector2( 315.974, 198.526 )
+scale = Vector2( 0.452365, 0.581654 )
 texture = ExtResource( 2 )
 
 [node name="player1" type="StaticBody2D" parent="." groups=[
@@ -68,7 +68,7 @@ texture = ExtResource( 3 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
-position = Vector2( -8.57367, -11.1459 )
+position = Vector2( -6.00159, -11.1459 )
 shape = SubResource( 5 )
 
 [node name="theBall" type="Node2D" parent="." groups=[
