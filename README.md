@@ -1,6 +1,8 @@
 # 2D-Pong
 2D Ping Pong game created with Godot 3.
 
+![2D Pong](/Pong%20Resource/2d-pong.png)
+
 What is Godot?
   - https://godotengine.org/
 
