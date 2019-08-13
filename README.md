@@ -4,7 +4,8 @@
 What is Godot?
   - https://godotengine.org/
 
-NOTE: The exe file for the game is included in the repo should you wish to test the game. You will need to execute the exe from within this folder structure as it will require the game files. If you are on another platform you will have to install Godot 3 and export the game for you platform.
+HOW TO RUN:
+  Install Godot 3 and export the game for you platform.
 
 Controls:
 
