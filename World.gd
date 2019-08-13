@@ -1,7 +1,7 @@
 extends Node2D
 
 export var playerSpeed = 420; #px
-export var initialBallSpeed = 100; #px
+export var initialBallSpeed = 150; #px
 export var ballSpeedIncreaseAmount = 1.2; #px
 export var maxBallSpeed = 450 #px
 var screenSize

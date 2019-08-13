@@ -5,10 +5,10 @@
 [ext_resource path="res://Pong Resource/bat.png" type="Texture" id=3]
 [ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 37.3107 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 37.0135 )
 
 [sub_resource type="CircleShape2D" id=3]
@@ -55,7 +55,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
 position = Vector2( 4.28693, -11.1459 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="player2" type="StaticBody2D" parent="." groups=[
 "player2",
@@ -69,7 +69,7 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
 position = Vector2( -6.00159, -11.1459 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="theBall" type="Node2D" parent="." groups=[
 "ball",
