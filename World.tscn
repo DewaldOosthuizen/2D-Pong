@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Pong Resource/table.png" type="Texture" id=2]
-[ext_resource path="res://Pong Resource/bat.png" type="Texture" id=3]
-[ext_resource path="res://Pong Resource/ball-orange.png" type="Texture" id=4]
+[ext_resource path="res://resources/table.png" type="Texture" id=2]
+[ext_resource path="res://resources/bat.png" type="Texture" id=3]
+[ext_resource path="res://resources/ball-orange.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 37.3107 )

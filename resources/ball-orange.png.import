@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ball-orange.png-5408f72d532c66ee72a4a0c9cea361d8.stex"
+path="res://.import/ball-orange.png-72106eab8c0926c89c04a91ca4a430b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pong Resource/ball-orange.png"
-dest_files=[ "res://.import/ball-orange.png-5408f72d532c66ee72a4a0c9cea361d8.stex" ]
+source_file="res://resources/ball-orange.png"
+dest_files=[ "res://.import/ball-orange.png-72106eab8c0926c89c04a91ca4a430b8.stex" ]
 
 [params]
 
